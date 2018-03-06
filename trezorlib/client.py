@@ -568,8 +568,8 @@ class ProtocolMixin(object):
         if chain_id:
             msg.chain_id = chain_id
 
-        if not tx_type is None:
-            msg.tx_type=int_to_big_endian(tx_type)
+        if tx_type is not None:
+            msg.tx_type = int_to_big_endian(tx_type)
 
         response = self.call(msg)
 
